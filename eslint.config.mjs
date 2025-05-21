@@ -31,7 +31,12 @@ export default [
       ...pluginReact.configs.recommended.rules,
       ...pluginJSX.configs.recommended.rules,
       ...pluginTSEslint.configs.recommended.rules,
-      "prettier/prettier": "error",
+      "prettier/prettier": [
+        "error",
+        {
+          endOfLine: "auto",
+        },
+      ],
       "react/react-in-jsx-scope": "off",
     },
     settings: {
