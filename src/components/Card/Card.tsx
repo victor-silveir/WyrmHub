@@ -10,7 +10,15 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ image, title, subtitle }): JSX.Element => {
   return (
     <CardContainer>
-      <CardImage src={image ? image : "/assets/notFoundDragon.png"} alt={title} />
+      <CardImage
+        src={image ? image : "/assets/notFoundDragon.png"}
+        alt={title}
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.onerror = null;
+          target.src = "/assets/notFoundDragon.png";
+        }}
+      />
       <CardContent>
         <CardTitle>{title}</CardTitle>
         <CardSubtitle>{subtitle}</CardSubtitle>
