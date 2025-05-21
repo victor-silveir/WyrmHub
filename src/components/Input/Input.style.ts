@@ -9,7 +9,7 @@ export const StyledInput = styled.input<StyledInputProps>`
     padding: 0.75rem 1rem;
     width: 100%;
     background-color: ${theme.colors.darkPrimary};
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.darkSecondary};
     border-radius: 4px;
     outline: none;
     border: 2px solid transparent;
@@ -20,8 +20,8 @@ export const StyledInput = styled.input<StyledInputProps>`
     }
 
     &:focus {
-      border: 2px solid ${theme.colors.secondary};
-      color: ${theme.colors.secondary};
+      border: 2px solid ${theme.colors.darkSecondary};
+      color: ${theme.colors.darkSecondary};
     }
 
     ${$hasError &&
