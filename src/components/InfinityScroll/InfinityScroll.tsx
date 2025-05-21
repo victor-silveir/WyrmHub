@@ -1,25 +1,12 @@
 import React, { JSX, useCallback, useEffect, useRef, useState } from "react";
-import { Wrapper, Container } from "./InfinityScroll.style";
-import styled, { keyframes } from "styled-components";
+import * as S from "./InfinityScroll.style";
+import Spinner from "../Spinner/Spinner";
 
-interface InfiniteScrollListProps<T> {
+type InfiniteScrollListProps<T> = {
   data: T[];
   renderItem: (item: T, index: number) => React.ReactNode;
   pageSize?: number;
-}
-
-const spin = keyframes`
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-`;
-
-const Loader = styled.img`
-  width: 48px;
-  height: 48px;
-  animation: ${spin} 1s linear infinite;
-  margin: 2rem auto;
-  display: block;
-`;
+};
 
 const InfiniteScrollList = <T,>({
   data,
@@ -51,8 +38,8 @@ const InfiniteScrollList = <T,>({
   );
 
   return (
-    <Wrapper>
-      <Container>
+    <S.Wrapper>
+      <S.Container>
         {visibleItems.map((item, index) => {
           const isLast = index === visibleItems.length - 1;
           return (
@@ -61,9 +48,9 @@ const InfiniteScrollList = <T,>({
             </div>
           );
         })}
-      </Container>
-      {hasMore && <Loader src="/dragon-spinner.png" alt="Loading..." />}
-    </Wrapper>
+      </S.Container>
+      <Spinner isLoading={hasMore} />
+    </S.Wrapper>
   );
 };
 
