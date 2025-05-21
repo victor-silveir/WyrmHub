@@ -6,7 +6,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      {/* your app routes/components */}
+      <>Dragons</>
     </ThemeProvider>
   );
 }

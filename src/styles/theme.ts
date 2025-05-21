@@ -8,6 +8,6 @@ export const theme = {
     text: "#333",
   },
   fonts: {
-    body: "Arial, sans-serif",
+    body: "Poppins",
   },
 };
