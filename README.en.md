@@ -96,8 +96,6 @@ React was used as the standard library and react-query was used in conjunction w
 
 To be able to run the project on your machine, you need to have [NodeJs](https://nodejs.org/en/) installed.
 
-If You want to check the demo version of the application just access [WyrmHub](https://wyrm-hub.vercel.app/)!
-
 ## Running locally:
 
 After downloading the project, open the command terminal at the root of the project and run the following command:
