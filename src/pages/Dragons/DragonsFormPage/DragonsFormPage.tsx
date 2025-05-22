@@ -1,14 +1,6 @@
 import React, { JSX, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import {
-  FormWrapper,
-  FormContainer,
-  DragonPreview,
-  FormFields,
-  Label,
-  Textarea,
-  SubmitButton,
-} from "./DragonsFormPage.style";
+import * as S from "./DragonsFormPage.style";
 
 import { useFetchDragonById } from "../../../hooks/useFetchDragons";
 import { useCreateDragon, useUpdateDragonById } from "../../../hooks/useMutations";
@@ -56,19 +48,19 @@ const DragonFormPage: React.FC = (): JSX.Element => {
   };
 
   return (
-    <FormWrapper>
-      <FormContainer>
+    <S.FormWrapper>
+      <S.FormContainer>
         {imageUrl ? (
-          <DragonPreview
+          <S.DragonPreview
             src={imageUrl}
             alt={name}
             onError={(e) => (e.currentTarget.src = "/assets/notFoundDragon.png")}
           />
         ) : (
-          <DragonPreview src="/assets/notFoundDragon.png" alt="Preview" />
+          <S.DragonPreview src="/assets/notFoundDragon.png" alt="Preview" />
         )}
-        <FormFields onSubmit={handleSubmit}>
-          <Label>Name</Label>
+        <S.FormFields onSubmit={handleSubmit}>
+          <S.Label>Name</S.Label>
           <Input
             bgColor={"#1F353F"}
             value={name}
@@ -76,7 +68,7 @@ const DragonFormPage: React.FC = (): JSX.Element => {
             required
           />
 
-          <Label>Type</Label>
+          <S.Label>Type</S.Label>
           <Input
             bgColor={"#1F353F"}
             value={type}
@@ -84,20 +76,20 @@ const DragonFormPage: React.FC = (): JSX.Element => {
             required
           />
 
-          <Label>Image URL</Label>
+          <S.Label>Image URL</S.Label>
           <Input
             bgColor={"#1F353F"}
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           />
 
-          <Label>Histories (one per line)</Label>
-          <Textarea rows={5} value={histories} onChange={(e) => setHistories(e.target.value)} />
+          <S.Label>Histories (one per line)</S.Label>
+          <S.Textarea rows={5} value={histories} onChange={(e) => setHistories(e.target.value)} />
 
           <Button type="submit">{isEditMode ? "Update Dragon" : "Create Dragon"}</Button>
-        </FormFields>
-      </FormContainer>
-    </FormWrapper>
+        </S.FormFields>
+      </S.FormContainer>
+    </S.FormWrapper>
   );
 };
 

@@ -1,19 +1,18 @@
-// src/components/PageTemplate/PageTemplate.tsx
 import React, { JSX } from "react";
 import Header from "../Header/Header";
-import { Container, Wrapper, HeaderWrapper } from "./PageTemplate.style";
+import * as S from "./PageTemplate.style";
 import { Outlet } from "react-router-dom";
 
 const PageTemplate: React.FC = (): JSX.Element => {
   return (
-    <Wrapper>
-      <HeaderWrapper>
+    <S.Wrapper>
+      <S.HeaderWrapper>
         <Header />
-      </HeaderWrapper>
-      <Container>
+      </S.HeaderWrapper>
+      <S.Container>
         <Outlet />
-      </Container>
-    </Wrapper>
+      </S.Container>
+    </S.Wrapper>
   );
 };
 

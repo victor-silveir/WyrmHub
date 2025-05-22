@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes, JSX } from "react";
-import { StyledInput, ErrorMessage } from "./Input.style";
+import * as S from "./Input.style";
 
 type InputProps = {
   hasError?: boolean;
@@ -15,8 +15,8 @@ const Input: React.FC<InputProps> = ({
 }): JSX.Element => {
   return (
     <div>
-      <StyledInput $bgColor={bgColor} $hasError={hasError} {...props} />
-      {hasError && errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+      <S.StyledInput $bgColor={bgColor} $hasError={hasError} {...props} />
+      {hasError && errorMessage && <S.ErrorMessage>{errorMessage}</S.ErrorMessage>}
     </div>
   );
 };

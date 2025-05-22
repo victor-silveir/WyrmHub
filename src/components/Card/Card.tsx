@@ -1,4 +1,4 @@
-import React from "react";
+import React, { JSX } from "react";
 import * as S from "./Card.style";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 
@@ -12,7 +12,7 @@ type CardProps = {
   onDelete?: (id: string) => void;
 };
 
-const Card: React.FC<CardProps> = ({ id, title, subtitle, image, onDelete }) => {
+const Card: React.FC<CardProps> = ({ id, title, subtitle, image, onDelete }): JSX.Element => {
   const navigate = useNavigate();
 
   const handleClick = () => {
