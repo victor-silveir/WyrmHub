@@ -4,12 +4,18 @@ import { StyledInput, ErrorMessage } from "./Input.style";
 type InputProps = {
   hasError?: boolean;
   errorMessage?: string;
+  bgColor?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const Input: React.FC<InputProps> = ({ hasError = false, errorMessage, ...props }): JSX.Element => {
+const Input: React.FC<InputProps> = ({
+  hasError = false,
+  errorMessage,
+  bgColor,
+  ...props
+}): JSX.Element => {
   return (
     <div>
-      <StyledInput $hasError={hasError} {...props} />
+      <StyledInput $bgColor={bgColor} $hasError={hasError} {...props} />
       {hasError && errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );

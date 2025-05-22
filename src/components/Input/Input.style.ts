@@ -2,13 +2,14 @@ import styled, { css } from "styled-components";
 
 type StyledInputProps = {
   $hasError?: boolean;
+  $bgColor?: string;
 };
 
 export const StyledInput = styled.input<StyledInputProps>`
-  ${({ theme, $hasError }) => css`
+  ${({ theme, $hasError, $bgColor }) => css`
     padding: 0.75rem 1rem;
     width: 100%;
-    background-color: ${theme.colors.darkPrimary};
+    background-color: ${$bgColor ? $bgColor : theme.colors.darkPrimary};
     color: ${theme.colors.darkSecondary};
     border-radius: 4px;
     outline: none;
