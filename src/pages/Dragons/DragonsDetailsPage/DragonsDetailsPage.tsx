@@ -1,5 +1,5 @@
 import React, { JSX } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import * as S from "./DragonsDetailsPage.style";
 import { useFetchDragonById } from "../../../hooks/useFetchDragons";
 import Button from "../../../components/Button/Button";
@@ -9,6 +9,7 @@ import Spinner from "../../../components/Spinner/Spinner";
 const DragonDetailsPage: React.FC = (): JSX.Element => {
   const { id } = useParams();
   const { data: dragon, isLoading, error } = useFetchDragonById(id);
+  const navigate = useNavigate();
 
   if (isLoading) return <Spinner isLoading={isLoading} />;
   if (error || !dragon)
@@ -38,7 +39,7 @@ const DragonDetailsPage: React.FC = (): JSX.Element => {
             ) : (
               <S.InfoHistories>No history available.</S.InfoHistories>
             )}
-            <Button onClick={() => console.log("Update clicked")}>Change informations</Button>
+            <Button onClick={() => navigate(`/dragons-form/${id}`)}>Change informations</Button>
           </S.InfoColumn>
         </S.DragonDetailsContainer>
       </S.DragonDetailsWrapper>
