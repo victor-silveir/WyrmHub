@@ -5,9 +5,11 @@ import { useFetchDragons } from "../../hooks/useFetchDragons";
 import * as S from "./DragonsPage.style";
 import Alert from "../../components/Alert/Alert";
 import Spinner from "../../components/Spinner/Spinner";
+import { useDeleteDragon } from "../../hooks/useMutations";
 
 const DragonsPage: React.FC = (): JSX.Element => {
   const { data: dragons, isLoading, error } = useFetchDragons();
+  const { mutate: deleteDragon } = useDeleteDragon();
 
   return (
     <>
@@ -25,6 +27,7 @@ const DragonsPage: React.FC = (): JSX.Element => {
               subtitle={dragon.type}
               image={dragon.imageUrl as string}
               id={dragon.id}
+              onDelete={(id) => deleteDragon(id)}
             />
           )}
         />
