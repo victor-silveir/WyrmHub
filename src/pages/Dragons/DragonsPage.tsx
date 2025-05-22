@@ -23,7 +23,8 @@ const DragonsPage: React.FC = (): JSX.Element => {
               key={dragon.id}
               title={dragon.name}
               subtitle={dragon.type}
-              image={dragon.imageUrl}
+              image={dragon.imageUrl as string}
+              id={dragon.id}
             />
           )}
         />
