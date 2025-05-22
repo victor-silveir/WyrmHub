@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.darkPrimary};
+  position: relative;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -45,4 +46,35 @@ export const CardTitle = styled.h3`
 
 export const CardSubtitle = styled.p`
   font-size: 1rem;
+`;
+
+export const CardActions = styled.div`
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+`;
+
+export const IconButton = styled.button`
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.text};
+  transition: background 0.2s ease;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.secondary};
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
 `;
