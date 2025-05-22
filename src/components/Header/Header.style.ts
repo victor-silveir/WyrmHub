@@ -13,6 +13,16 @@ export const HeaderContainer = styled.header`
   position: relative;
 `;
 
+export const StyledLink = styled(Link)`
+  color: ${({ theme }) => theme.colors.secondary};
+  text-decoration: none;
+
+  span {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+`;
+
 export const Logo = styled.div`
   display: flex;
   align-items: center;
@@ -22,11 +32,6 @@ export const Logo = styled.div`
   img {
     width: 60px;
     height: 60px;
-  }
-
-  span {
-    font-size: 1.25rem;
-    font-weight: bold;
   }
 `;
 
