@@ -96,6 +96,8 @@ Foi utilizado react como biblioteca padrão e react-query em conjunto com axios 
 
 Para poder rodar o projeto na sua máquina é necessário ter instalado [NodeJs](https://nodejs.org/en/).
 
+Se você quiser conferir a versão demo do aplicativo, basta acessar [WyrmHub](https://wyrm-hub.vercel.app/)!
+
 ## Rodando localmente:
 
 Após baixar o projeto, abra o terminal de comando na raíz do projeto e execute o seguinte comando:
