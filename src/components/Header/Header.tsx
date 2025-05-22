@@ -4,6 +4,8 @@ import { HeaderContainer, Logo, Nav, NavItem, MenuToggle } from "./Header.style"
 const Header: React.FC = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleNavigation = (uri: string) => {};
+
   return (
     <HeaderContainer>
       <Logo>
@@ -15,7 +17,7 @@ const Header: React.FC = (): JSX.Element => {
         <NavItem to="/" onClick={() => setMenuOpen(false)}>
           Home
         </NavItem>
-        <NavItem to="/new" onClick={() => setMenuOpen(false)}>
+        <NavItem to="/dragons-form" onClick={() => setMenuOpen(false)}>
           New Dragon
         </NavItem>
       </Nav>
