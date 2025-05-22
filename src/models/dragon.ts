@@ -7,4 +7,11 @@ type Dragon = {
   imageUrl?: string;
 };
 
+export interface DragonPayload {
+  name: string;
+  type: string;
+  imageUrl?: string;
+  histories: string[];
+}
+
 export default Dragon;
