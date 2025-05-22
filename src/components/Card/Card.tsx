@@ -1,16 +1,24 @@
-import React, { JSX } from "react";
-import { CardContainer, CardImage, CardContent, CardTitle, CardSubtitle } from "./Card.style";
+import React from "react";
+import * as S from "./Card.style";
+import { useNavigate } from "react-router-dom";
 
 interface CardProps {
-  image?: string;
+  id: string;
   title: string;
   subtitle: string;
+  image: string;
 }
 
-const Card: React.FC<CardProps> = ({ image, title, subtitle }): JSX.Element => {
+const Card: React.FC<CardProps> = ({ id, title, subtitle, image }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/dragons/${id}`);
+  };
+
   return (
-    <CardContainer>
-      <CardImage
+    <S.CardContainer onClick={handleClick}>
+      <S.CardImage
         src={image ? image : "/assets/notFoundDragon.png"}
         alt={title}
         onError={(e) => {
@@ -19,11 +27,11 @@ const Card: React.FC<CardProps> = ({ image, title, subtitle }): JSX.Element => {
           target.src = "/assets/notFoundDragon.png";
         }}
       />
-      <CardContent>
-        <CardTitle>{title}</CardTitle>
-        <CardSubtitle>{subtitle}</CardSubtitle>
-      </CardContent>
-    </CardContainer>
+      <S.CardContent>
+        <S.CardTitle>{title}</S.CardTitle>
+        <S.CardSubtitle>{subtitle}</S.CardSubtitle>
+      </S.CardContent>
+    </S.CardContainer>
   );
 };
 

@@ -9,6 +9,16 @@ export const CardContainer = styled.div`
   height: auto;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    border: 1px solid ${({ theme }) => theme.colors.primary};
+  }
 
   @media (max-width: 768px) {
     max-width: 100%;
