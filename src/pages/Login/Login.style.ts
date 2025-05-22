@@ -27,7 +27,7 @@ export const Container = styled.div`
     transform: translate(-50%, -50%);
     width: 90%;
     z-index: 2;
-    background-color: rgb(51, 12, 47, 0.95);
+    background-color: rgb(31, 53, 63, 0.95);
     border-radius: 12px;
   }
 `;
